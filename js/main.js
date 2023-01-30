@@ -10,7 +10,7 @@ let saludoUser = "Hola"+ " " + nombre + "comencemos con la reserva :";
 
 alert(saludoUser);
 
-let calculo = prompt ("¿Cuántas personas serían?")
+let calculo =  prompt ("¿Cuántas personas serían?")
 
 if (calculo >=1 && calculo <5 ){
     alert("Perfecto,"+ nombre + "tenemos la mesa 15, para esa cantidad de personas.");
@@ -45,12 +45,16 @@ let localDondeIr = Number (prompt("Ingrese a que local quiere asistir. (Olivos (
             break;      
     }
 
-    let finalizar = prompt("Para finalizar, necesitamos que nos confirmes si querer reservar : (si-1)(no-2)")
+    let finalizar = prompt("Para finalizar, necesitamos que nos confirmes si queres reservar : (si-1)(no-2)")
 
-    if(finalizar ==1){
-    alert(nombre+""+ "Confirmamos tu reserva, muchas gracias" );
+    if(finalizar ==1 ){
+    alert(nombre+""+ " !Confirmamos tu reserva, gracias¡" );
     } else{
-        alert("Gracias por participar de este simulador.");
+        alert("Cancelamos tu reserva :( ");
     } 
+
+    function saludar (){
+        alert("Muchas gracias"+ " " + nombre  +"por participar de este simulador !")
+    }
+    saludar();
     
-    alert("Muchas gracias"+ " " + nombre + "por participar de mi simulador.");
