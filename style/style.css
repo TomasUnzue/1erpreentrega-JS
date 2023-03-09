@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2  {
+    text-align: center;
+    justify-content: center;
+}
+form {
+    display: grid;
+    gap: 20px;
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+input{
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    margin-top: 10px;
+}
+input[type='checkbox']{
+    display: flex;
+    margin-bottom: 25px;
+}
+input:focus{
+    border-color: #000;
+}
+.button {
+    justify-content: center;
+}
+button {
+    margin-left: .5em;
+}

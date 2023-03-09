@@ -4,11 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <title>1er-Pre-entrega-Js</title>
 </head>     
     <h1>Bienvenidos a todods!</h1>
-    <p>Esta es mi segunda preentrega, del curso de Js</p>
+        <h2>Bienvenidos a mi simulador de reservas</h2>
+        <div class="formulario">
+            <form action="">
+                    <label for="text">Decime tu nombre:</label>
+                    <input id="nombre" type="" value="">
+                    <div>
+                    <label for="text">Cuantas personas serian :</label>
+                    <input id="cantidadPersonas" type="text" value=" ">
+                    </div>
+                    <div>
+                    <label for="text">Indique un horario</label>
+                    <input type="text" value="" id="horario">
+                    </div>
+                    <div>
+                    <label for="text" id="local">Local al cual asistir</label>
+                    <select id="local">
+                        <option value="local1">MUNRO</option>
+                        <option value="local2">OLIVOS</option>
+                        <option value="local2">CARAPACHAY</option>
+                    </select>
+                    </div>
+                    <label  for="text">A continuacion, indicaremos los platos disponibles</label>
+                        <div>
+                            <input id="platos1" type="checkbox">
+                            Bife de chorizo con guarnicion a eleccion.$2500
+                            
+                            <input id="platos2" type="checkbox">
+                            Milanesa con guarnicion a eleccion. $2000
+                            
+                            <input id="platos3" type="checkbox">
+                            Pollo deshuesado con guarnicion a eleccion.$1500
+                        </div>
+                    <label for="text">Confirmacion de reserva, desea confirmar ?</label>
+                    <select id="confirmar">
+                        <option value="si">si</option>
+                        <option value="no">no</option>
+                    </select>            
+                    <button class="button" onclick="guardarReserva"> enviar reserva</button>
+                    <label for="text">Recepcionamos su reserva. Muchas gracias por participar.</label>
+                </div>
+                <p id="resultado"></p>
+            </form>
     <script src="./js/main.js"></script>  
 </body>
 </html>
