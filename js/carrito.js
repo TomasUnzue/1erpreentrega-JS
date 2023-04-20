@@ -1,5 +1,5 @@
 const pintarCarrito = () => {
-    
+    modalContainer.innerHTML = "";
     modalContainer.style.display = "flex";
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header"
@@ -11,6 +11,7 @@ const pintarCarrito = () => {
     const modalbutton = document.createElement("h1");
     modalbutton.innerText = "x";
     modalbutton.className = "modal-header-button";
+
     modalbutton.addEventListener ("click", () => {
         modalContainer.style.display = "none";
     });
@@ -31,16 +32,37 @@ const pintarCarrito = () => {
 
         modalContainer.append(carritoContent);
 
-        console.log(carrito.length);
-        let eliminar = document.createElement("span")
+
+        let eliminar = document.createElement("span");
+
         eliminar.innerText = "❌";
         eliminar.className = "borrar-product";
         carritoContent.append(eliminar);
+        eliminar.addEventListener("click", eliminarProducto );
+        eliminar.addEventListener("click", () => {
+            Swal.fire({
+                title: 'Desea eliminar producto?',
+                text: "El producto se eliminara de su carrito!",
+                icon: 'warning',
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'SI',
+                
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    cantidadCarrito.length = 0 ;
+                    localStorage.setItem("carritoContent", JSON.stringify(carritoContent))
+                    carritoContent();
+                }
+            })
+        })
     });
 
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0 );
-    const montoFinal = document.createElement("div")
-    montoFinal.className = "total-content"
+    const montoFinal = document.createElement("div");
+    montoFinal.className = "total-content";
     montoFinal.innerHTML = `total a pagar : ${total} $ `;
     modalContainer.append(montoFinal);
 };
@@ -48,16 +70,21 @@ const pintarCarrito = () => {
 abrirCarrito.addEventListener("click", pintarCarrito);
 
 
-const eliminarProducto = () => {
+const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id);
-
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId;
     });
     carritoCounter();
+    guardarLocal();
     pintarCarrito();
 };
 const carritoCounter = () => {
     cantidadCarrito.style.display = "block";
-    cantidadCarrito.innerText = carrito.length;
-}
+    const carritoLength = carrito.length;
+
+    localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+    cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
+};
+
+carritoCounter();

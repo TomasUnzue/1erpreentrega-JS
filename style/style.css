@@ -1,3 +1,5 @@
+
+
 body{
     margin: 0px;
 }
@@ -24,36 +26,40 @@ body{
     margin-right: 20px;
     margin-top: 3.5vh;
     cursor: pointer;
+    text-align: center;
+    justify-content: center;
 }
 
 .banner-container{
     text-align: center;
     padding: 15% 0;
 }
-.banner{
+.banner {
     margin: 0;
     color: #000;
     text-shadow: 1px 1px 3px rgb(0, 0, 0, 0.2);
     font-size: 55px;
     font-weight: bold;
 }
-.banner p{
+.banner p {
     font-size: 35px;
     color: #000;
     opacity: 0.7;
     text-shadow: 1px 1px 3px rgb(0, 0, 0, 0.2);
 }
-.shop-content{
+.shop-content {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 30px 80px;
 }
 .card {
-    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
     max-width: 350px;
     margin: auto;
     text-align: center; 
+    justify-content: center;
     font-family: 'Courier New', Courier, monospace;
 }
 .card > img {
@@ -62,7 +68,6 @@ body{
     padding: 30px;
 }
 .price {
-    color: grey;
     font-size: 22px;
 }
 .card button {
@@ -72,12 +77,14 @@ body{
     color: white;
     background-color: #000;
     text-align: center;
+    justify-content: center;
     cursor: pointer;
     width: 100%;
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 .card button:hover {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 .modal-container {
     width: 90%;
@@ -117,7 +124,7 @@ body{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin: 10px;
+    margin-bottom: 15px;
 }
 .modal-container > div > img {
     height: 120px;
@@ -129,10 +136,10 @@ body{
     text-align: center;
     padding-top: 20px;
 }
-.borrar-product{
+.borrar-product {
     cursor: pointer;
 }
-.cantidad-carrito{
+.cantidad-carrito {
     background-color: red;
     color: white;
     border-radius: 50%;
